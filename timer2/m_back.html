@@ -1,0 +1,247 @@
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+<title></title>
+<link rel="stylesheet"  type="text/css" href="css/common.css" />
+<link rel="stylesheet"  type="text/css" href="css/content.css" />
+<link rel="stylesheet"  type="text/css" href="css/content2.css" />
+<link rel="stylesheet"  type="text/css" href="css/item.css" />
+<link rel="stylesheet"  type="text/css" href="css/layout.css" />
+<link rel="stylesheet"  type="text/css" href="css/normalize.css" />
+<link rel="stylesheet"  type="text/css" href="css/style.css" />
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="js/iscroll5.js"></script>
+<script type="text/javascript" src="js/jquery.form.js"></script>
+<script type="text/javascript" src="js/jquery.rwdImageMaps.js"></script>
+<script type="text/javascript" src="js/jquery-rnssg-mobile.js"></script>
+<script type="text/javascript" src="js/jQueryRotate.js"></script>
+<script type="text/javascript" src="js/sns.js"></script>
+<script type="text/javascript" src="js/swiper.js"></script>
+<script type="text/javascript" src="js/ui.js"></script>
+
+<script type="text/javascript" src="js/jquery.flipcountdown.js"></script>
+
+</head>
+<body>
+
+<!-- 개발전달사항
+	   링크된 css, script 는 따로 가져가실 필요 없으시고 상단 style, script 만 가져가시면 됩니다.
+-->
+
+<style>
+body{margin:0; padding:0;}
+#gdBromide{width:100%; text-align: left; font-family: Dotum,"돋움",Gulim,"굴림",Verdana,Helvetica,Tahoma,sans-serif;}
+#gdBromide img{display:block; width:100%;vertical-align:top;}
+#gdBromide .timeVisual{}
+#gdBromide  .countDown{position:relative}
+#gdBromide  .countDown span{position:absolute;top:30%;left:0;right:0;margin:0 auto;text-align:center;display:block;width:80%;color:#fff}
+#gdBromide  .countDown span div.txtDay{
+	float:left;
+	color:#fff;
+	background:url(./images/txt_day_1.png) no-repeat 0 0;
+	text-indent:-99999px;
+	width:32px;
+	height:50px;
+	margin:5px 0 0 8px
+	}
+#gdBromide .countAreaWrap{position:relative}
+#gdBromide .countAreaWrap .countArea{position:absolute;top:53.191%;width:100%}
+#gdBromide .countAreaWrap .countArea ul{width:100%;overflow:hidden}
+#gdBromide .countAreaWrap .countArea ul li{float:left;color:#54c7c7;font-weight:bold;width:50%;text-align:center;font-size:120%}
+#gdBromide .countAreaWrap .countArea ul li span{}
+#gdBromide .countAreaWrap .countArea ul li:first-child{color:#2b80d9}
+#gdBromide .countAreaWrap .countArea span.count_tit_hidden{overflow:hidden;width:0;height:0;font-size:0;line-height:0}
+
+#gdBromide .memberPR{position:relative}
+#gdBromide .memberPR div.recomF{background:#4e4e4e;border-radius:5px;width:90%;margin:0 auto;position:absolute;top:53.7335%;left:0;right:0;overflow:hidden;padding:3% 0}
+#gdBromide .memberPR div.recomF > span{color:#fff;float:left;width:30%;text-indent:10px;font-size:120%}
+#gdBromide .memberPR div.recomF p{float:left;width:70%}
+#gdBromide .memberPR div.recomF p span{margin-bottom:3%;display:block}
+#gdBromide .memberPR div.recomF p span input[type="text"]{width:90%}
+#gdBromide .memberPR div.recomF p span:last-child img{width:92%}
+#gdBromide .memberPR div.inputBox{position:absolute;top:79.4275%;left:0;right:0;margin:0 auto;width:90%}
+#gdBromide .memberPR div.inputBox span{width:48%;display:inline-block}
+#gdBromide .memberPR div.inputBox span:nth-child(1), #gdBromide .memberPR div.inputBox span:nth-child(3){margin-right:1%}
+#gdBromide .memberPR div.inputBox input[type="text"]{width:100%;border:1px solid #ccc;background:#efefef;margin-bottom:2%;text-align:center}
+
+#gdBromide .visitEx{position:relative}
+#gdBromide .visitEx ul{position:absolute;left:0;right:0;width:90%;margin:0 auto;display:table}
+#gdBromide .visitEx ul li{width:33.3%;display:table-cell}
+#gdBromide .visitEx ul li input[type="radio"]{display:none}
+#gdBromide .visitEx ul li input[type="radio"]:checked + label:before{content:"\2022";color:#e12021;font-size:5em;line-height:26px;text-align:center}
+#gdBromide .visitEx ul li label:before{border-radius:30px}
+#gdBromide .visitEx ul li label{display:inline-block;height:26px;position:relative;background:none;padding:0;margin:0;padding-left:40px;font-size:110%;font-weight:bold;letter-spacing:-1px}
+#gdBromide .visitEx ul li label:before{display:inline-block;content:'';width:26px;height:26px;position:absolute;left:0;bottom:1px;background:#fff;border:3px solid #959595}
+#gdBromide .visitEx > p{width:50%;position:absolute;top:38.978%;left:0;right:0;margin:0 auto}
+
+#gdBromide .memberBuy{position:relative}
+#gdBromide .memberBuy > p{position:absolute;top:71.272%;left:0;right:0;width:50%;margin:0 auto}
+#gdBromide .snsArea{position:relative}
+#gdBromide .snsArea ul{position:absolute;top:76.413%;left:0;right:0;margin:0 auto;width:90%;overflow:hidden}
+#gdBromide .snsArea ul li{float:left;width:45%}
+#gdBromide .snsArea ul li:first-child{margin-right:5%;margin-left:3%}
+
+
+.xdsoft_flipcountdown{display:inline-block;}
+.xdsoft_flipcountdown .xdsoft_digit{float:left;background-repeat:no-repeat;}
+.xdsoft_flipcountdown .xdsoft_clearex{clear:both;float:none;}
+.xdsoft_flipcountdown >.xdsoft_digit{background-position:0px 0px}
+.xdsoft_flipcountdown >.xdsoft_digit.xdsoft_separator,.xdsoft_flipcountdown >.xdsoft_digit.xdsoft_dot{opacity:0.9;}
+
+.xdsoft_flipcountdown.xdsoft_size_sm >.xdsoft_digit{
+	width:24px;
+	height:34px;
+	background-image:url(./images/digit-sm.png);
+}
+.xdsoft_flipcountdown.xdsoft_size_sm >.xdsoft_digit.xdsoft_space,
+.xdsoft_flipcountdown.xdsoft_size_sm >.xdsoft_digit.xdsoft_separator,
+.xdsoft_flipcountdown.xdsoft_size_sm >.xdsoft_digit.xdsoft_dot{
+	width:10px;
+	background-position:-6px -2310px;
+}
+.xdsoft_flipcountdown.xdsoft_size_md >.xdsoft_digit{
+	width:36px;
+	height:51px;
+	background-image:url(./images/digit-md.png);
+}
+.xdsoft_flipcountdown.xdsoft_size_md >.xdsoft_digit.xdsoft_space,
+.xdsoft_flipcountdown.xdsoft_size_md >.xdsoft_digit.xdsoft_separator,
+.xdsoft_flipcountdown.xdsoft_size_md >.xdsoft_digit.xdsoft_dot{
+	width:10px;
+	background-position:-13px -3432px;
+}
+
+</style>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		var winSize =$(window).width();
+		if(winSize < 480){
+			newYear('sm');
+		} else if(winSize >= 480){
+			newYear('md');
+		}
+		function newYear(size){
+			$('.new_year').flipcountdown({
+				size:size,
+				beforeDateTime:'08/31/2016 00:00:01'
+			});
+		}
+		$( window ).resize(function() {
+			var winSize =$(window).width();
+			if(winSize < 480){
+				$('.xdsoft_digit').css('background-posion', '0 0');
+				newYear('sm', '08/31/2016 00:00:01');
+				$('.xdsoft_flipcountdown').removeClass('xdsoft_size_md');
+			} else if(winSize >= 480){
+				$('.xdsoft_digit').css('background-posion', 0 0);
+				newYear('md', '08/31/2016 00:00:01');
+				$('.xdsoft_flipcountdown').removeClass('xdsoft_size_sm');
+			}
+			function newYear(size, date){
+				//$('.xdsoft_flipcountdown').remove();
+				//$('.new_year').removeClass('xdsoft');
+				setTimeout(function(){
+					var dt = new Date();
+					$('.new_year').flipcountdown({
+						size:size,
+						beforeDateTime:date
+					});
+				}, 1000);
+			}
+		});
+		/*
+		$('.new_year').flipcountdown({
+				size:'md',
+				beforeDateTime:'08/31/2016 00:00:01'
+			});
+
+			$('.new_year').flipcountdown({
+				size:'sm',
+				beforeDateTime:'08/31/2016 00:00:01'
+			});
+
+		*/
+
+
+		$(".new_year > div > div:nth-child(2)").next().hide();
+		$(".new_year > div > div:nth-child(2)").after("<div class='txtDay'>日</div>");
+	});
+</script>
+<script type="text/javascript">
+
+</script>
+
+
+<div id="gdBromide">
+	<div class="timeVisual">
+		<img src="./images/img_visual.jpg" alt="" />
+	</div>
+	<div class="countDown"><!--카운트-->
+		<span class="new_year"></span>
+		<img src="./images/img_con01_1.jpg" alt="" />
+	</div>
+	<div class="countAreaWrap"><!--남은수량-->
+		<div class="countArea">
+			<ul>
+				<li class="countPR"><span class="count_tit_hidden">宣传会员</span><span>1000</span></li>
+				<li class="countBuy"><span class="count_tit_hidden">购物会员</span><span>1000</span></li>
+			</ul>
+		</div>
+		<img src="./images/img_con01_2.jpg" alt="" />
+	</div>
+	<!--//countAreaWrap-->
+	<div class="memberPR">
+		<div class="recomF">
+			<span><label for="f_id">好友用户名</label></span>
+			<p>
+				<span><input type="text" id="f_id" /></span>
+				<span><a href="#"><img src="./images/img_con02_btn1.jpg" alt="登录好友用户名" /></a></span>
+			</p>
+		</div>
+		<!--//recomF-->
+		<div class="inputBox">
+			<span><input type="text"  value="LUNATIC***" /></span>
+			<span><input type="text" /></span>
+			<span><input type="text" /></span>
+			<span><input type="text" /></span>
+			<span><input type="text" /></span>
+		</div>
+		<!--//inputBox-->
+		<img src="./images/img_con02_1.jpg" alt="" />
+	</div>
+	<!--//memberPR-->
+	<img src="./images/img_con02_2.jpg" alt=""/>
+	<div class="visitEx">
+		<ul>
+			<li><input type="radio" name="date" id="day1" checked /><label for="day1">9/1 ~ 9/10</label></li>
+			<li><input type="radio" name="date" id="day2"/><label for="day2">9/11 ~ 9/20</label></li>
+			<li><input type="radio"name="date"  id="day3"/><label for="day3">9/21 ~ 9/30</label></li>
+		</ul>
+		<p><a href="#"><img src="./images/img_con02_btn2.jpg" alt="" /></a></p>
+		<img src="./images/img_con02_3.jpg" alt="" />
+	</div>
+	<!--//visitEx-->
+	<div class="memberBuy">
+		<p><a href="#"><img src="./images/img_con03_btn.jpg" alt="" /></a></p>
+		<img src="./images/img_con03.jpg" alt="" />
+	</div>
+	<!--//memberBuy-->
+	<div class="snsArea">
+		<ul>
+			<li><a href="#"><img src="./images/img_con04_btn1.jpg" alt="" /></a></li>
+			<li><a href="#"><img src="./images/img_con04_btn2.jpg" alt="" /></a></li>
+		</ul>
+		<img src="./images/img_con04.jpg" alt="" />
+	</div>
+	<!--//snsArea-->
+	<img src="./images/img_con05.jpg" alt="" />
+	<img src="./images/img_con06.jpg" alt="" />
+</div>
+</body>
+</html>
