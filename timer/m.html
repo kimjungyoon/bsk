@@ -1,0 +1,107 @@
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+<title></title>
+<link rel="stylesheet"  type="text/css" href="css/common.css" />
+<link rel="stylesheet"  type="text/css" href="css/content.css" />
+<link rel="stylesheet"  type="text/css" href="css/content2.css" />
+<link rel="stylesheet"  type="text/css" href="css/item.css" />
+<link rel="stylesheet"  type="text/css" href="css/layout.css" />
+<link rel="stylesheet"  type="text/css" href="css/normalize.css" />
+<link rel="stylesheet"  type="text/css" href="css/style.css" />
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="js/iscroll5.js"></script>
+<script type="text/javascript" src="js/jquery.form.js"></script>
+<script type="text/javascript" src="js/jquery.rwdImageMaps.js"></script>
+<script type="text/javascript" src="js/jquery-rnssg-mobile.js"></script>
+<script type="text/javascript" src="js/jQueryRotate.js"></script>
+<script type="text/javascript" src="js/sns.js"></script>
+<script type="text/javascript" src="js/swiper.js"></script>
+<script type="text/javascript" src="js/ui.js"></script>
+
+<script type="text/javascript" src="js/jquery.flipcountdown.js"></script>
+
+</head>
+<body>
+
+<!-- 개발전달사항
+	   링크된 css, script 는 따로 가져가실 필요 없으시고 상단 style, script 만 가져가시면 됩니다.
+-->
+
+<style>
+body{margin:0; padding:0;}
+#gdBromide{width:100%; text-align: left; font-family: Dotum,"돋움",Gulim,"굴림",Verdana,Helvetica,Tahoma,sans-serif;}
+#gdBromide img{display:block; width:100%;vertical-align:top;}
+#gdBromide .countDown {position:relative}
+#gdBromide .countDown #new_year {position:absolute;top:15%;left:0;right:0;margin:0 auto;width:80%;color:#fff;text-align:center;}
+#gdBromide .countDown #new_year div.txtDay{
+	float:left;
+	color:#fff;
+	background:url(./images/txt_day_1.png) no-repeat 0 0;
+	text-indent:-99999px;
+	width:32px;
+	height:50px;
+	margin:5px 0 0 8px;
+	}
+#gdBromide .count {position:absolute;top:60%;right:0;left:0;text-align:center;font-size:8vw;font-weight:bold;color:#54c7c7;}
+#gdBromide .count .count_tit_hidden{overflow:hidden;width:0;height:0;font-size:0;line-height:0}
+
+.xdsoft_flipcountdown{display:inline-block;}
+.xdsoft_flipcountdown .xdsoft_digit{float:left;background-repeat:no-repeat;}
+.xdsoft_flipcountdown .xdsoft_clearex{clear:both;float:none;}
+.xdsoft_flipcountdown >.xdsoft_digit{background-position:0px 0px}
+.xdsoft_flipcountdown >.xdsoft_digit.xdsoft_separator,.xdsoft_flipcountdown >.xdsoft_digit.xdsoft_dot{opacity:0.9;}
+.xdsoft_flipcountdown.xdsoft_size_sm >.xdsoft_digit{
+	width:24px;
+	height:34px;
+	background-image:url(./images/digit-sm.png);
+}
+.xdsoft_flipcountdown.xdsoft_size_sm >.xdsoft_digit.xdsoft_space,
+.xdsoft_flipcountdown.xdsoft_size_sm >.xdsoft_digit.xdsoft_separator,
+.xdsoft_flipcountdown.xdsoft_size_sm >.xdsoft_digit.xdsoft_dot{
+	width:12px;
+	background-position:-4px -2344px;
+}
+</style>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#new_year').flipcountdown({
+			size:'sm',
+			beforeDateTime:'09/30/2016 24:00:00'
+		});
+		$("#new_year > div > div:nth-child(2)").next().hide();
+		$("#new_year > div > div:nth-child(2)").after("<div class='txtDay'>日</div>");
+	});
+</script>
+
+<div id="gdBromide">
+	<div class="timeVisual">
+		<img src="./images/img_con01.jpg" alt="" />
+	</div>
+	<div class="countDown"><!--카운트-->
+		<span id="new_year"></span>
+		<p class="count"><span class="count_tit_hidden">购物会员</span><span>2000</span></p>
+		<img src="./images/img_con02.jpg" alt="" />
+	</div>
+	<img src="./images/img_con03.jpg" alt="" usemap="#gdbmap01"/>
+	<map name="gdbmap01" id="gdbmap01">
+		<area shape="rect" coords="95,391,547,488" href="#" target="" alt="申请GD 珍藏版海报" />
+		<area shape="rect" coords="39,940,317,1017" href="#" target="" alt="SNS分享" />
+		<area shape="rect" coords="324,940,600,1017" href="#" target="" alt="领取积分" />
+	</map>
+	<img src="./images/img_con04.jpg" alt="" />
+</div>
+<script type="text/javascript" src="http://m.ssgdfs.com/js/jquery.rwdImageMaps.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('img[usemap]').rwdImageMaps();		
+	});
+</script>
+</body>
+</html>
