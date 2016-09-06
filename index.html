@@ -20,42 +20,77 @@
 	</style>
 	<script>
 	$(function() {
+		$(".choice label").click(function(){
+			var $checkBoxList = $('.choice');
+			var $labels = $checkBoxList.find("label");
+			$labels.removeClass("on");
+			$(this).addClass("on");
+		});
 		var chk = 0;
 		function back(_this) {
 			_this.animate({'left' : '0'},200);
 			$('.bg').animate({'width' : '0'},200);
+			_this.removeClass('on');
 			chk = 0;
 		}
-		function end(_this) {
-			_this.css('left','auto');
-			_this.animate({'right' : '0'},200);
-			$('.bg').animate({'width' : '100%'},200);
+		function end(_this,wrapW) {
+			_this.animate({'left' : wrapW+'px'},200);
+			_this.addClass('on');
+			$('.bg').animate({'width' : '100%'},200,function(){
+				if ($('.choice label').eq(2).hasClass('on')) { 
+					$('.evtLayer2').show(); // 세번째 보기 선택
+
+				} else if ($('.choice label').hasClass("on")) {
+					$('.evtLayer1').show();// 나머지 보기 선택
+
+				} 
+				$(".btn").draggable("disable");
+			});
 			chk = 1;
 		}
 		$(".btn").draggable({
 			containment : 'parent',
+			start : function(e) {
+				if (!$('.choice label').hasClass("on")) { // 보기 선택을 하지 않았을 경우
+					alert('보기를 선택해 주시기 바랍니다.');
+					e.preventDefault();
+				}
+			},
 			drag : function(){
 				var pos = $(this).position().left;
 				$('.bg').width(pos);
 			},
 			stop : function() {
 				var _this = $(this)
-					,wrap = _this.parent().width() / 2
+					,wrapW = _this.parent().width() - _this.width()
+					,wrap = _this.parent().width() / 4
 					,pos = _this.position().left;
-				(pos < wrap) ? back(_this) : end(_this) ;
+				(pos < wrap) ? back(_this) : end(_this, wrapW) ;
 			}
 		});
-		$('.chk').click(function(){
-			(chk === 1) ? alert('on') : alert('off');
-		})
 	});
+	function layerClose() {
+		$('.evtLayer').hide();
+	}
 	</script>
+	<p class="choice">
+		<label><input type="radio" />aaaa</label>
+		<label><input type="radio" />aaaa</label>
+		<label><input type="radio" />aaaa</label>
+		<label><input type="radio" />aaaa</label>
+		<label><input type="radio" />aaaa</label>
+	</p>
 	<div class="wrap">
 		<div class="btn"><span></span></div>
 		<div class="bg"></div>
 	</div>
 
-	<button type="button" class="chk">확인</button>
+	<div class="evtLayer1" style="display:none;">
+		aaaaaaa
+	</div>
+	<div class="evtLayer2" style="display:none;">
+		bbbbbb
+	</div>
 
 
 </body>
