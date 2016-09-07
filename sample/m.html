@@ -47,8 +47,8 @@ body{margin:0;padding:0;}
 #evtWrap .slideLock .btn {position:absolute;width:29.3%;top:0;bottom:0;background:url(images/btn.png) no-repeat;background-size:auto 100%;z-index:2;}
 #evtWrap .slideLock .on {background:url(images/btn_on.png) no-repeat;background-size:auto 100%;}
 #evtWrap .slideLock .bg {position:absolute;top:0;bottom:0;background:url(images/bg_slide_on.png) no-repeat;background-size:auto 100%;}
-#evtWrap .evtLayer {position:fixed;top:-999999px;right:0;left:0;height:100px;z-index:9999;}
-#evtWrap .layerOpen {top:0;bottom:0;height:auto;}
+#evtWrap .evtLayer {display:none;position:fixed;top:-999999px;right:0;left:0;height:100px;z-index:-1;}
+#evtWrap .layerOpen {top:0;bottom:0;height:auto;z}
 #evtWrap .evtLayer:before {content:"";position:absolute;top:0;right:0;bottom:0;left:0;background:#000;opacity:.5;}
 #evtWrap .evtLayer .layerCon {position:absolute;top:50%;left:50%;width:80%;transform:translate(-50%, -50%);-webkit-transform:translate(-50%, -50%);}
 #evtWrap .evtLayer .layerCon img {width:100%;}
