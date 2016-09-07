@@ -1,0 +1,175 @@
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+<title></title>
+<link rel="stylesheet"  type="text/css" href="css/common.css" />
+<link rel="stylesheet"  type="text/css" href="css/content.css" />
+<link rel="stylesheet"  type="text/css" href="css/content2.css" />
+<link rel="stylesheet"  type="text/css" href="css/item.css" />
+<link rel="stylesheet"  type="text/css" href="css/layout.css" />
+<link rel="stylesheet"  type="text/css" href="css/normalize.css" />
+<link rel="stylesheet"  type="text/css" href="css/style.css" />
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="js/iscroll5.js"></script>
+<script type="text/javascript" src="js/jquery.form.js"></script>
+<script type="text/javascript" src="js/jquery.rwdImageMaps.js"></script>
+<script type="text/javascript" src="js/jquery-rnssg-mobile.js"></script>
+<script type="text/javascript" src="js/jQueryRotate.js"></script>
+<script type="text/javascript" src="js/sns.js"></script>
+<script type="text/javascript" src="js/swiper.js"></script>
+<script type="text/javascript" src="js/ui.js"></script>
+<script type="text/javascript" src="js/jquery-ui.js"></script>
+<script type="text/javascript" src="jquery.ui.touch.js"></script>
+
+</head>
+<body>
+
+<!-- 개발전달사항
+	   링크된 css, script 는 따로 가져가실 필요 없으시고 상단 style, script 만 가져가시면 됩니다.
+-->
+
+<style>
+body{margin:0;padding:0;}
+#evtWrap img {width:100%;}
+#evtWrap .evtCont {position:relative;}
+#evtWrap .evtCont .choice {position:absolute;top:23%;left:0;right:0;text-align:center;}
+#evtWrap .evtCont .choice input[type=radio] {position:absolute;}
+#evtWrap .evtCont .choice label {position:relative;display:inline-block;width:30%;text-align:center;cursor:pointer;}
+#evtWrap .evtCont .choice label span {display:inline-block;width:14%;margin:0 0 5px;}
+#evtWrap .evtCont .choice label span:before {content:"";display:block;padding-top:100%;background:url(images/bg_chk.png) no-repeat 0 0;background-size:100% auto;}
+#evtWrap .evtCont .choice label.on span:before {background-position:0 100%;}
+#evtWrap .slideLock {position:absolute;height:7.8%;bottom:7%;left:14%;right:14%;background:url(images/bg_slide.png) no-repeat;background-size:100% auto;}
+#evtWrap .slideLock .btn {position:absolute;width:29.3%;top:0;bottom:0;background:url(images/btn.png) no-repeat;background-size:auto 100%;z-index:2;}
+#evtWrap .slideLock .on {background:url(images/btn_on.png) no-repeat;background-size:auto 100%;}
+#evtWrap .slideLock .bg {position:absolute;top:0;bottom:0;background:url(images/bg_slide_on.png) no-repeat;background-size:auto 100%;}
+#evtWrap .evtLayer {position:fixed;top:-999999px;right:0;left:0;z-index:9999;}
+#evtWrap .layerOpen {top:0;bottom:0;}
+#evtWrap .evtLayer:before {content:"";position:absolute;top:0;right:0;bottom:0;left:0;background:#000;opacity:.5;}
+#evtWrap .evtLayer .layerCon {position:absolute;top:50%;left:50%;width:80%;transform:translate(-50%, -50%);-webkit-transform:translate(-50%, -50%);}
+#evtWrap .evtLayer .layerCon img {width:100%;}
+</style>
+<div id="evtWrap">
+	<img src="images/img1.jpg" alt="" />
+	<div class="evtCont">
+		<p class="choice">
+			<label><span><input type="radio" name="chk" /></span> <img src="images/img_item1.jpg" alt="" /></label>
+			<label><span><input type="radio" name="chk" /></span> <img src="images/img_item2.jpg" alt="" /></label><br />
+			<label><span><input type="radio" name="chk" /></span> <img src="images/img_item3.jpg" alt="" /></label>
+			<label><span><input type="radio" name="chk" /></span> <img src="images/img_item4.jpg" alt="" /></label>
+			<label><span><input type="radio" name="chk" /></span> <img src="images/img_item5.jpg" alt="" /></label>
+		</p>
+		<div class="slideLock">
+			<div class="btn"></div>
+			<div class="bg"></div>
+		</div>
+		<img src="images/img2.jpg" alt="" />
+	</div>
+	<img src="images/img3.jpg" alt="" usemap="#planetmap" />
+	<map name="planetmap">
+		<area shape="rect" coords="161,388,478,456" href="http://www.ssgdfs.com/shop/product/productDetail?prdtCode=64419000032" alt="홍삼 특선 선물세트 자세히보기" />
+		<area shape="rect" coords="161,695,478,763" href="http://www.ssgdfs.com/shop/product/productDetail?prdtCode=63799000017" alt="뉴 과일모음 자세히보기" />
+		<area shape="rect" coords="161,1003,478,1071" href="http://www.ssgdfs.com/shop/product/productDetail?prdtCode=05939000072" alt="뉴질랜드 마누카꿀 레몬 25+ 자세히보기" />
+	</map>
+	<img src="images/img4.jpg" alt="" />
+
+	<!-- 1,000원 지급 레이어 -->
+	<div class="evtLayer evtLayer1">
+		<div class="layerCon">
+			<img src="images/img_layer1.png" alt="" usemap="#planetmap2" />
+			<map name="planetmap2">
+				<area shape="rect" coords="471,35,524,85" href="#;" alt="레이어닫기" onclick="layerClose(); return false;" />
+				<area shape="rect" coords="175,542,354,606" href="#;" alt="1,000원 지급 확인" />
+			</map>
+		</div>
+	</div>
+	<!-- //1,000원 지급 레이어 -->
+	
+	<!-- 2,000원 지급 레이어 -->
+	<div class="evtLayer evtLayer2">
+		<div class="layerCon">
+			<img src="images/img_layer2.png" alt="" usemap="#planetmap3" />
+			<map name="planetmap3">
+				<area shape="rect" coords="471,70,524,121" href="#;" alt="레이어닫기" onclick="layerClose(); return false;" />
+				<area shape="rect" coords="175,576,354,642" href="#;" alt="2,000원 지급 확인" />
+			</map>
+		</div>
+	</div>
+	<!-- //2,000원 지급 레이어 -->
+</div>
+<script type="text/javascript" src="http://m.ssgdfs.com/js/jquery.rwdImageMaps.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		var chk = 0 // 이벤트 참여 여부 체크 - 만약 참여 했을 경우 선택한 보기의 번호를 담아줍니다.
+			,sLock = 0; // 잠금 해제 여부 체크
+		if (chk > 0) { // 이미 이벤트를 참여 했을 경우 보기 및 잠금해제 비활성화
+			$('.choice label').eq(chk-1).addClass('on'); 
+			$('.choice label').eq(chk-1).find('input').attr('checked','checked');
+			$(".btn").css('right', '0').addClass('on'); 
+			$('.bg').css('width','100%'); 
+			sLock = 1;
+		}
+		$(".choice label").click(function(e){
+			if (chk === 0) { // 참여 안했을 경우
+				var $checkBoxList = $('.choice');
+				var $labels = $checkBoxList.find("label");
+				$labels.removeClass("on");
+				$(this).addClass("on");
+			} else {
+				e.preventDefault();
+			}
+		});
+		function back(_this) { // 버튼을 부모 영역의 절반이하로 버튼을 원상태로 복귀 시켜줍니다.
+			_this.animate({'left' : '0'},200);
+			$('.bg').animate({'width' : '0'},200);
+			_this.removeClass('on');
+		}
+		function end(_this,wrapW) { // 버튼을 부모 영역의 절반이상으로 밀었을 경우 이벤트 참여 완료
+			_this.animate({'left' : wrapW+'px'},200);
+			_this.addClass('on');
+			$('.bg').animate({'width' : '100%'},200,function(){
+				if ($('.choice label').eq(2).hasClass('on')) { 
+					$('.evtLayer2').addClass('layerOpen'); // 세번째 보기 선택 시 적립금 2,000원 레이어
+
+				} else if ($('.choice label').hasClass("on")) {
+					$('.evtLayer1').addClass('layerOpen'); // 나머지 보기 선택 시 적립금 1,000원 레이어
+
+				} 
+				$(".btn").draggable("disable"); // 이벤트 참여 완료 시 더 이상 밀어지지 않습니다.
+				chk = $('.choice .on').index(); // 이벤트 참여 완료 시 선택했던 보기 값을 담아둡니다.
+			});
+		}
+		$(".btn").draggable({
+			containment : 'parent',
+			start : function(e) {
+				if (!$('.choice label').hasClass('on')) { // 보기를 선택 안하고 잠금해제 할 경우
+					alert('보기를 선택해 주시기 바랍니다.');
+					e.preventDefault();
+				}
+				if (sLock === 1) {e.preventDefault();} // 이미 이벤트를 참여 하였을 경우
+			},
+			drag : function(){ // 잠금해제 도중 배경이 바뀌는 액션
+				var pos = $(this).position().left;
+				$('.bg').width(pos);
+			},
+			stop : function() { // 잠금해제 완료 후
+				var _this = $(this)
+					,wrapW = _this.parent().width() - _this.width()
+					,wrap = _this.parent().width() / 4
+					,pos = _this.position().left;
+				(pos < wrap) ? back(_this) : end(_this, wrapW) ;
+			}
+		});
+		$('img[usemap]').rwdImageMaps();
+	});
+	function layerClose() { // 이벤트 참여 레이어 팝업 닫기
+		$('.evtLayer').removeClass('layerOpen');
+	}
+</script>
+
+</body>
+</html>
