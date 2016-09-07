@@ -177,20 +177,17 @@ function iPadTouchHandler(event) {
 				return;
 			}
 			iPadTouchStart(event); /*We need to trigger two events here to support one touch drag and drop*/
-			event.preventDefault();
 			return false;
 			break;
 
 		case "touchmove":
 			cancelHold();
 			type = "mousemove";
-			event.preventDefault();
 			break;
 
 		case "touchend":
 			if (cancelMouseUp) {
 				cancelMouseUp = false;
-				event.preventDefault();
 				return false;
 			}
 			cancelHold();
