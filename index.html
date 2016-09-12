@@ -59,7 +59,10 @@
 				chk = $('.choice .on').index(); // 이벤트 참여 완료 시 선택했던 보기 값을 담아둡니다.
 			});
 		}
-		$(".btn").draggable({
+		$('.btn').mouseenter(function(){
+			alert();
+		});
+		/*$(".btn").draggable({
 			containment : 'parent',
 			start : function(e) {
 				if (!$('.choice label').hasClass('on')) {  // 보기를 선택 안하고 잠금해제 할 경우
@@ -79,7 +82,7 @@
 					,pos = _this.position().left;
 				(pos < wrap) ? back(_this) : end(_this, wrapW) ;
 			}
-		});
+		});*/
 	});
 	function layerClose() { // 이벤트 참여 레이어 팝업 닫기
 		$('.evtLayer').hide();
