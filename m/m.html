@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+<title></title>
+<link rel="stylesheet"  type="text/css" href="css/item.css" />
+<link rel="stylesheet"  type="text/css" href="css/mobile_rn_base.css" />
+<link rel="stylesheet"  type="text/css" href="css/mobile_rn_common.css" />
+<link rel="stylesheet"  type="text/css" href="css/mobile_rn_incheon.css" />
+<link rel="stylesheet"  type="text/css" href="css/mobile_rn_main.css" />
+
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="js/iscroll5.js"></script>
+<script type="text/javascript" src="js/jquery.form.js"></script>
+<script type="text/javascript" src="js/jquery.rwdImageMaps.js"></script>
+<script type="text/javascript" src="js/jquery-rnssg-mobile.js"></script>
+<script type="text/javascript" src="js/jQueryRotate.js"></script>
+<script type="text/javascript" src="js/sns.js"></script>
+<script type="text/javascript" src="js/swiper.js"></script>
+<script type="text/javascript" src="js/ui.js"></script>
+</head>
+
+<body>
+
+<!-- 작업 영역 -->
+<style type="text/css">
+#evtWrap {background:#e1f4f2;}
+#evtWrap img {width:100%;}
+.evtQuiz {position:relative;margin:-11% 3.2% 0;background:#fff;border:1px solid #6e8785;}
+.evtQuiz .smsChk {display:block;margin:-1px 0;cursor:pointer;}
+.evtQuiz .smsChk .chk {position:absolute;visibility:hidden;}
+.quizList {}
+.quizList li {position:relative;font-family:"나눔 고딕", Nanum Gothic;border-top:1px solid #d7d7d7;text-align:center;}
+.quizList li:first-child {border:0;}
+.quizList li button {width:23%;overflow:visible;margin:0 2%;background:none;border:0;cursor:pointer;}
+.quizList li .subject {display:block;padding:2% 2% 0;color:#000;font-size:3.5vw;}
+.quizList li .btn {display:block;padding:2% 0;}
+.quizList li .correct,
+.quizList li .incorrect {display:none;width:42%;margin:0 auto;padding:2% 0;}
+.quizList li .correctWrap {display:none;padding:2% 4% 4%;background:url(images/bg_line.gif) repeat-x 2px 0;color:#454545;font-size:3vw;}
+.quizList .open .btn {display:none;}
+.quizList .open .correct {display:block;}
+.quizList .open .correctWrap,
+.quizList .current .correctWrap {display:block;}
+.evtJeKiss {margin:7% 3.2%;text-align:center;}
+</style>
+
+<div id="evtWrap">
+	<img src="images/img1.jpg" alt="" />
+	<div class="evtQuiz">
+		<img src="images/img2.jpg" alt="" />
+		<label class="smsChk">
+			<input type="checkbox" class="chk" />
+			<img src="images/img2_off.jpg" alt="명동점 오픈 SMS 알람동의" />
+		</label>
+		<img src="images/img3.jpg" alt="" usemap="#planetmap" />
+		<map name="planetmap">
+			<area shape="rect" coords="114,0,482,68" href="#" alt="적립금 받기" />
+		</map>
+
+		<ul class="quizList">
+			<li>
+				<span class="subject">1. 지금 이 사이트는 신세계 인터넷 면세점 명동점이다.</span>
+				<span class="btn">
+					<button type="button" onclick="correct($(this),'Y');"><img src="images/btn_yes.gif" alt="Yes" /></button>
+					<button type="button" onclick="correct($(this),'N');"><img src="images/btn_no.gif" alt="No" /></button>
+				</span>
+				<span class="incorrect"><img src="images/txt3.gif" alt="내일 다시!" /></span>
+				<span class="correct"><img src="images/txt2.gif" alt="정답!" /></span>
+				<span class="correctWrap">
+					현재 사이트는 신세계인터넷면세점 부산점 입니다.<br />
+					명동점은 Grand Open을 앞두고 있습니다. 두근두근!
+				</span>
+			</li>
+			<li>
+				<span class="subject">2. 명동점은 오픈을 앞두고 있다!</span>
+				<span class="btn">
+					<button type="button" onclick="correct($(this),'Y');"><img src="images/btn_yes.gif" alt="Yes" /></button>
+					<button type="button" onclick="correct($(this),'N');"><img src="images/btn_no.gif" alt="No" /></button>
+				</span>
+				<span class="incorrect"><img src="images/txt3.gif" alt="내일 다시!" /></span>
+				<span class="correct"><img src="images/txt1.gif" alt="정답!" /></span>
+				<span class="correctWrap">
+					신세계 인터넷 면세점 명동점의 오픈이 다가오고 있습니다!<br />
+					오픈은 과연~ 언제일까요? 두근두근한 마음으로 함께 기다려볼까요?
+				</span>
+			</li>
+			<li>
+				<span class="subject">3. 명동점에는 부산점보다 훨씬 많은 브랜드와 다양한 상품이 있다.</span>
+				<span class="btn">
+					<button type="button" onclick="correct($(this),'Y');"><img src="images/btn_yes.gif" alt="Yes" /></button>
+					<button type="button" onclick="correct($(this),'N');"><img src="images/btn_no.gif" alt="No" /></button>
+				</span>
+				<span class="incorrect"><img src="images/txt3.gif" alt="내일 다시!" /></span>
+				<span class="correct"><img src="images/txt1.gif" alt="정답!" /></span>
+				<span class="correctWrap">
+					명동점에는 부산점의 약 2배에 달하는 브랜드와 상품이 준비되어 있답니다.<br />
+					명동점만의 단독 브랜드도 놓치지 말고 즐기세요!
+				</span>
+			</li>
+			<li>
+				<span class="subject">4. 명동점 오픈시 주문 가능 시간이 더 길어진다.</span>
+				<span class="btn">
+					<button type="button" onclick="correct($(this),'Y');"><img src="images/btn_yes.gif" alt="Yes" /></button>
+					<button type="button" onclick="correct($(this),'N');"><img src="images/btn_no.gif" alt="No" /></button>
+				</span>
+				<span class="incorrect"><img src="images/txt3.gif" alt="내일 다시!" /></span>
+				<span class="correct"><img src="images/txt2.gif" alt="정답!" /></span>
+				<span class="correctWrap">
+					명동점에서는 인천공항 기준 최대 출국 6시간 전 까지 주문이 가능해요.<br />
+					단, 주문가능 시간은 출국시간과 공항에 따라 다르니 반드시 재확인 해주세요.
+				</span>
+			</li>
+			<li>
+				<span class="subject">5. 명동점 사이트 주소는 www.ssgdfm.com 이다.</span>
+				<span class="btn">
+					<button type="button" onclick="correct($(this),'Y');"><img src="images/btn_yes.gif" alt="Yes" /></button>
+					<button type="button" onclick="correct($(this),'N');"><img src="images/btn_no.gif" alt="No" /></button>
+				</span>
+				<span class="incorrect"><img src="images/txt3.gif" alt="내일 다시!" /></span>
+				<span class="correct"><img src="images/txt1.gif" alt="정답!" /></span>
+				<span class="correctWrap">
+					명동점의 웹사이트 주소는 www.ssgdfm.com 입니다.<br />
+					모바일 앱은 추후 오픈합니다!
+				</span>
+			</li>
+			<li>
+				<span class="subject">6. 명동점 오픈시 부산점의 등급과 적립금을 그대로 가져갈 수 있다.</span>
+				<span class="btn">
+					<button type="button" onclick="correct($(this),'Y');"><img src="images/btn_yes.gif" alt="Yes" /></button>
+					<button type="button" onclick="correct($(this),'N');"><img src="images/btn_no.gif" alt="No" /></button>
+				</span>
+				<span class="incorrect"><img src="images/txt3.gif" alt="내일 다시!" /></span>
+				<span class="correct"><img src="images/txt1.gif" alt="정답!" /></span>
+				<span class="correctWrap">
+					부산점에서 사용하던 아이디로 명동점에 로그인 하면 부산점에서 누리던 등급과 적립금을 가져갈 수 있어요.<br />
+					부산점의 등급과 적립금도 사라지지 않으니, 적립금이 두 배가 되겠죠?
+				</span>
+			</li>
+			<li>
+				<span class="subject">7. 명동점 오픈 시 바로 APP으로 이용 가능하다.</span>
+				<span class="btn">
+					<button type="button" onclick="correct($(this),'Y');"><img src="images/btn_yes.gif" alt="Yes" /></button>
+					<button type="button" onclick="correct($(this),'N');"><img src="images/btn_no.gif" alt="No" /></button>
+				</span>
+				<span class="incorrect"><img src="images/txt3.gif" alt="내일 다시!" /></span>
+				<span class="correct"><img src="images/txt1.gif" alt="정답!" /></span>
+				<span class="correctWrap">
+					신세계 인터넷 면세점 PC 및 모바일 웹이 먼저 오픈합니다.<br />
+					앱은 그 이후에 순차적으로 오픈하니 미리미리 PC 및 모바일웹으로 친해져요!
+				</span>
+			</li>
+			<li>
+				<span class="subject">8. 명동점 오픈시 부산점은 영업을 중단한다.</span>
+				<span class="btn">
+					<button type="button" onclick="correct($(this),'Y');"><img src="images/btn_yes.gif" alt="Yes" /></button>
+					<button type="button" onclick="correct($(this),'N');"><img src="images/btn_no.gif" alt="No" /></button>
+				</span>
+				<span class="incorrect"><img src="images/txt3.gif" alt="내일 다시!" /></span>
+				<span class="correct"><img src="images/txt2.gif" alt="정답!" /></span>
+				<span class="correctWrap">
+					명동점이 오픈해도 부산점은 여전히 열심히 운영합니다.<br />
+					명동점에만 있는 브랜드가 있고, 부산점에만 있는 브랜드가 있으니 스마트하게 이용하는 센스!
+				</span>
+			</li>
+			<li>
+				<span class="subject">9. 명동점, 부산점에서 전부 구매하면 인도장에 두 번 가야 한다.</span>
+				<span class="btn">
+					<button type="button" onclick="correct($(this),'Y');"><img src="images/btn_yes.gif" alt="Yes" /></button>
+					<button type="button" onclick="correct($(this),'N');"><img src="images/btn_no.gif" alt="No" /></button>
+				</span>
+				<span class="incorrect"><img src="images/txt3.gif" alt="내일 다시!" /></span>
+				<span class="correct"><img src="images/txt2.gif" alt="정답!" /></span>
+				<span class="correctWrap">
+					두 곳에서 샀어도 인도장에는 딱 한 번만 가면 돼요.<br />
+					신세계면세점 명동점과 부산점에서 산 물건을 합쳐서 전달 드려요! 
+				</span>
+			</li>
+			<li>
+				<span class="subject">10. 명동점 오픈 시 어마어마한 혜택 및 이벤트가 기다리고 있다.</span>
+				<span class="btn">
+					<button type="button" onclick="correct($(this),'Y');"><img src="images/btn_yes.gif" alt="Yes" /></button>
+					<button type="button" onclick="correct($(this),'N');"><img src="images/btn_no.gif" alt="No" /></button>
+				</span>
+				<span class="incorrect"><img src="images/txt3.gif" alt="내일 다시!" /></span>
+				<span class="correct"><img src="images/txt1.gif" alt="정답!" /></span>
+				<span class="correctWrap">
+					명동점 오픈 이벤트 정보 살짝! 공유해요.<br />
+					하나. 이렇게 샀는데 공짜라구요? 주문금액 100%페이백 이벤트,<br />
+					두울. 원하는 채널을 골라 홍보하는 1인 홍보대사 이벤트.<br />
+					세엣. 항공사, 여행사, 타면세점, 카페, 베이커리 등급으로 등급 업! 이벤트.<br />
+					이 외에도 다양하게 준비되어 있답니다. 꼭 명동점에서 다시 만나요!
+				</span>
+			</li>
+		</ul>
+
+		<img src="images/img5.jpg" alt="" usemap="#planetmap2" />
+		<map name="planetmap2">
+			<area shape="rect" coords="65,154,532,225" href="#" alt="만점자 보너스 적립금" />
+		</map>
+		
+	</div>
+	<div class="evtJeKiss">
+		<img src="images/img6.jpg" alt="" usemap="#planetmap3" />
+		<map name="planetmap3">
+			<area shape="rect" coords="75,675,520,758" href="#" alt="다크초콜릿 더보기" />
+		</map>
+	</div>
+	<img src="images/img7.jpg" alt="" />
+</div>
+
+<script type="text/javascript">
+$(function(){
+	var lastQuiz = 0; // 전날 틀렸던 퀴즈의 번호를 담아줍니다.
+	$('.quizList li').each(function(){
+		var listIdx = $(this).index() + 1;
+		if (listIdx < lastQuiz) $(this).addClass('open');
+		if (listIdx === lastQuiz) $(this).addClass('current');
+	});
+	$('.smsChk').click(function(){
+		var _this = $(this)
+			,chk = _this.find('input')
+			,img = _this.find('img')
+			,imgSrc = img.attr('src');
+		if (chk.is(':checked')) {
+			var on = imgSrc.replace('_off','_on');
+			img.attr('src', on);
+		} else {
+			var off = imgSrc.replace('_on','_off');
+			img.attr('src', off);
+		}
+	});
+	$('img[usemap]').rwdImageMaps();
+})
+function correct(_this,q) {
+	var list = _this.parent().parent()
+		,idx = list.index() + 1
+		,btn = list.find('.btn')
+		,incorrectWrap = list.find('.incorrect');
+	
+	function actY() {
+		list.addClass('open');
+	}
+	function actN() {
+		list.addClass('current');
+		btn.hide();
+		incorrectWrap.css({'display':'block'});
+	}
+	function chk() {
+		if (idx == 1 || idx == 4 || idx== 8 || idx == 9) {
+			(q == 'N') ? actY() : actN();
+		} else {
+			(q == 'Y') ? actY() : actN();
+		}
+	}
+	if (idx >= 2) {
+		if (list.prev().hasClass('open')) {
+			chk();
+		} else {
+			alert('위 문제부터 풀어주시기 바랍니다.');
+		}
+		return false;
+	}
+	chk();
+}
+</script>
+<!-- //작업 영역 -->
+
+</body>
+</html>
