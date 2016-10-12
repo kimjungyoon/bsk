@@ -26,88 +26,52 @@
 
 <!-- 작업 영역 -->
 <style type="text/css">
-img {width:100%;}
-.evtQuiz {position:relative;overflow:hidden;}
-.quiz {position:absolute;top:55%;right:0;left:0;text-align:center;}
-.quiz label {position:relative;display:inline-block;width:5%;margin:0 10% 7%;padding:0 0 0 6%;}
-.quiz label input {position:absolute;left:0;top:0;bottom:0;width:50%;height:100%;background:url(images/bg_radio_off.gif) no-repeat;background-size:auto 100%;border:0;-webkit-appearance:none;-moz-appearance:none;box-sizing:border-box;}
-.quiz label input:checked {background:url(images/bg_radio_on.gif) no-repeat;background-size:auto 100%;}
-.quiz label img {}
-.quiz button {width:30%;background:none;border:0;}
-.quiz .correctLayer {display:none;position:absolute;top:0;right:8%;bottom:0;left:8%;}
-.correct .correctLayer {display:block;}
-.quiz .correctLayer:before {content:"";position:absolute;top:-130%;right:0;left:0;bottom:0;background:#f2efed;opacity:.8;}
-.quiz .correctLayer img {position:relative;margin-top:-20%;}
-.quiz2 {top:40%;}
-.evtPointSave {position:relative;}
-.evtPointSave .sel {position:absolute;top:0;right:12%;left:12%;height:60%;}
-.evtPointSave select {width:100%;height:100%;background:none;border:0;text-align-last:center;font-size:4vw;-webkit-appearance:none;-moz-appearance:none;}
+.evtWrap img {width:100%;}
+.evtCon {position:relative;}
+.evtPoint {position:absolute;top:16%;right:0;left:0;text-align:center;}
+.evtPoint .point {font-size:7vw;color:#fff;}
+.evtPoint .point strong {color:#fffb90;font-weight:bold;}
+.evtPoint .sel {display:block;margin:51% 15% 0;position:relative;}
+.evtPoint select {position:absolute;width:100%;height:100%;background:none;border:0;text-align-last:center;text-align:center;font-size:4vw;-webkit-appearance:none;-moz-appearance:none;}
+.evtPoint .btn {display:block;margin:3% 20% 0;}
 </style>
 <div class="evtWrap">
-	<img src="images/img1.jpg" alt="" />
-	<div class="evtQuiz">
-		<img src="images/img2.jpg" alt="" />
-		<div class="quiz quiz1">
-			<label><input type="radio" name="hanQ1" /><img src="images/img_q1_b1.gif" alt="껄" /></label>
-			<label><input type="radio" name="hanQ1" /><img src="images/img_q1_b2.gif" alt="걸" /></label>
-			<p><button type="button" onclick="quizCom(1);"><img src="images/btn_com.png" alt="정답확인" /></button></p>
-			<p class="correctLayer"><img src="images/img_correct.png" alt="정답 2천원" /></p>
-		</div>
-	</div>
-	<a href="#"><img src="images/img3.jpg" alt="" /></a>
-	<div class="evtQuiz">
-		<img src="images/img4.jpg" alt="" />
-		<div class="quiz quiz2">
-			<label><input type="radio" name="hanQ2" /><img src="images/img_q2_b1.gif" alt="워" /></label>
-			<label><input type="radio" name="hanQ2" /><img src="images/img_q2_b2.gif" alt="와" /></label>
-			<p><button type="button" onclick="quizCom(2);"><img src="images/btn_com.png" alt="정답확인" /></button></p>
-			<p class="correctLayer"><img src="images/img_correct.png" alt="정답 2천원" /></p>
-		</div>
-	</div>
-	<div class="evtPointSave">
-		<img src="images/img5.jpg" alt="" />
-		<span class="sel">
-			<select>
-				<option>2016년 10월</option>
-				<option>2016년 11월</option>
-				<option>2016년 12월</option>
-				<option>2017년 1월</option>
-				<option>2017년 2월</option>
-				<option>2017년 3월</option>
-				<option>2017년 4월</option>
-				<option>2017년 5월</option>
-				<option>2017년 6월</option>
-				<option>2017년 7월</option>
-				<option>2017년 8월</option>
-				<option>2017년 9월</option>
-				<option>2017년 10월</option>
-				<option>2017년 11월</option>
-				<option>2017년 12월</option>
-			</select>
-		</span>
-	</div>
-	<img src="images/img6.jpg" alt="적립금 받기" usemap="#evtImg6" />
-	<map name="evtImg6">
-		<area shape="rect" coords="139,0,502,71" href="#" alt="" />
+	<img src="images/img1_km_mo.jpg" alt="" usemap="#img1_km_pc" />
+	<map name="img1_km_pc">
+		<area shape="rect" coords="320,0,640,100" href="#" alt="명동점 INFO" />
+		<area shape="rect" coords="214,101,424,200" href="#" alt="내맘대로 홍보" />
 	</map>
+	<div class="evtCon">
+		<img src="images/img2_km_mo.jpg" alt="" />
+		<div class="evtPoint">
+			<p class="point">00000명 X 2 = <strong>00만원</strong></p>
+			<span class="sel">
+				<select>
+					<option>2016년 10월 (즉시지급)</option>
+					<option>2016년 11월</option>
+					<option>2016년 12월</option>
+					<option>2017년 1월</option>
+					<option>2017년 2월</option>
+					<option>2017년 3월</option>
+					<option>2017년 4월</option>
+					<option>2017년 5월</option>
+					<option>2017년 6월</option>
+					<option>2017년 7월</option>
+					<option>2017년 8월</option>
+					<option>2017년 9월</option>
+					<option>2017년 10월</option>
+					<option>2017년 11월</option>
+					<option>2017년 12월</option>
+				</select>
+				<img src="images/bg_select.gif" alt="" />
+			</span>
+			<a href="#" class="btn"><img src="images/btn_point.gif" alt="적립금 신청하기" /></a>
+		</div>
+	</div>
+	<img src="images/img3_km_mo.jpg" alt="" />
 </div>
 
 <script type="text/javascript">
-function quizCom(q) { // 퀴즈 체크 
-	var quizNum = $('.quiz'+q)
-		,quizChk = quizNum.find('input');
-
-	function correct() { // 퀴즈가 정답일 경우 실행되는 함수
-		quizNum.addClass('correct');
-	}
-
-	if (q === 1) {
-		(quizChk.eq(1).is(':checked')) ? correct() : alert('정답이 아닙니다,');
-	} else {
-		(quizChk.eq(0).is(':checked')) ? correct() : alert('정답이 아닙니다,');
-	}
-
-}
 $(function(){
 	$('img[usemap]').rwdImageMaps();
 });
