@@ -27,50 +27,91 @@
 <!-- 작업 영역 -->
 <style type="text/css">
 .evtWrap img {width:100%;}
-.evtCon {position:relative;}
-.evtPoint {position:absolute;top:16%;right:0;left:0;text-align:center;}
-.evtPoint .point {font-size:7vw;color:#fff;}
-.evtPoint .point strong {color:#fffb90;font-weight:bold;}
-.evtPoint .sel {display:block;margin:51% 15% 0;position:relative;}
-.evtPoint select {position:absolute;width:100%;height:100%;background:none;border:0;text-align-last:center;text-align:center;font-size:4vw;-webkit-appearance:none;-moz-appearance:none;}
-.evtPoint .btn {display:block;margin:3% 20% 0;}
+.evtHotItem {padding:0 5%;background:#fff;text-align:center;}
+.evtHotItemInfo .itemInfoBox {text-align:center;}
+.evtHotItemInfo .itemInfoBox:first-child {margin:0 0 5%;}
+.itemInfoBox p:first-child img {width:60%;}
+.itemInfoBox .prodName {display:block;margin:2% 0 0;color:#454545;font:5vw/1.2 'Nanum Gothic';font-weight:bold;letter-spacing:-1px;}
+.itemInfoBox .prodPrice {display:block;color:#454545;font:4.5vw/1.2 'Nanum Gothic';}
+.itemInfoBox .prodPrice .us {color:#ed0e1b;font-weight:bold;font-size:5vw;}
+
+.itemGraph {position:relative;margin:5% 0;padding:0 0 3%;background:#f0f0f0;}
+.itemGraph button {background:none;border:0;cursor:pointer;font:5vw/1.2 'Nanum Gothic';font-weight:bold;}
+.itemGraph .clickGraph {margin:0 0 3%;text-align:left;}
+.itemGraph .clickGraph .graph {position:absolute;top:24%;right:24%;bottom:52%;left:5%;background:#6d6664;overflow:hidden;border-radius:7px;text-align:left;}
+.itemGraph .clickGraph .graph span {display:inline-block;height:100%;background:#ff8429;color:#fff;font-size:3.3vw;font-weight:bold;text-align:center;letter-spacing:-2px;}
+.itemGraph .clickGraph .graph span:after {content:"";display:inline-block;height:100%;vertical-align:middle;}
+.itemGraph .clickGraph .bg {display:block;margin:18% 0 0;}
+.itemGraph .clickGraph button {position:absolute;width:20%;top:20%;right:2%;}
+
+.itemGraph .btnType1 {width:40%;margin:0 4px;padding:3% 0;background:#fff;color:#454545;}
+.itemGraph .btnType2 {width:40%;margin:0 4px;padding:3% 0;background:#ef1320;color:#fff;}
 </style>
 <div class="evtWrap">
-	<img src="images/img1_km_mo.jpg" alt="" usemap="#img1_km_pc" />
-	<map name="img1_km_pc">
-		<area shape="rect" coords="320,0,640,100" href="#" alt="명동점 INFO" />
-		<area shape="rect" coords="214,101,424,200" href="#" alt="내맘대로 홍보" />
-	</map>
-	<div class="evtCon">
-		<img src="images/img2_km_mo.jpg" alt="" />
-		<div class="evtPoint">
-			<p class="point">00000명 X 2 = <strong>00만원</strong></p>
-			<span class="sel">
-				<select>
-					<option>2016년 10월 (즉시지급)</option>
-					<option>2016년 11월</option>
-					<option>2016년 12월</option>
-					<option>2017년 1월</option>
-					<option>2017년 2월</option>
-					<option>2017년 3월</option>
-					<option>2017년 4월</option>
-					<option>2017년 5월</option>
-					<option>2017년 6월</option>
-					<option>2017년 7월</option>
-					<option>2017년 8월</option>
-					<option>2017년 9월</option>
-					<option>2017년 10월</option>
-					<option>2017년 11월</option>
-					<option>2017년 12월</option>
-				</select>
-				<img src="images/bg_select.gif" alt="" />
-			</span>
-			<a href="#" class="btn"><img src="images/btn_point.gif" alt="적립금 신청하기" /></a>
+	<img src="images/img1_km_mo.jpg" alt="" />
+	<div class="evtHotItem">
+		<p><img src="images/img_txt1_km_mo.gif" alt="오늘의 HOT ITEM" /></p>
+		<div class="evtHotItemInfo">
+
+			<!-- 첫번째 아이템 영역-->
+			<div class="itemInfoBox">
+				<p>
+					<img src="images/img_item1_km_mo.jpg" alt="" />
+					<strong class="prodName">[FURLA] PIPER</strong>
+					<span class="prodPrice">할인가 : 
+						<span class="us">$21.9</span> 
+						<span class="nation">(24,411원)</span> 
+						<span class="rate">(30%<span class="down">↓</span>)</span>
+					</span>
+				</p>
+				<div class="itemGraph">
+					<img src="images/img_txt2_km_mo.gif" alt="" />
+					<div class="clickGraph">
+						<span class="graph">
+							<span style="width:100%;">10% 추가 할인</span> <!-- 클릭시 할인율 상승 퍼센트로 조절 3% 이하 일시 텍스트 나오지 않음-->
+						</span>
+						<img src="images/bg_graph_km_mo.gif" alt="" class="bg" />
+						<button type="button"><img src="images/btn_click_km_mo.gif" alt="간절한 마음을 담아 CLICK!" /></button>
+					</div>
+					<div class="btnWrap">
+						<button type="button" class="btnType1">40개 남음</button>
+						<button type="button" class="btnType2">구매하기</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- 두번째 아이템 영역-->
+			<div class="itemInfoBox">
+				<p>
+					<img src="images/img_item2_km_mo.jpg" alt="" />
+					<strong class="prodName">[CALVIN KLEIN JEANS] SUMMIT PU FLAPOVER BACKPACK</strong>
+					<span class="prodPrice">할인가 : 
+						<span class="us">$21.9</span> 
+						<span class="nation">(24,411원)</span> 
+						<span class="rate">(30%<span class="down">↓</span>)</span>
+					</span>
+				</p>
+				<div class="itemGraph">
+					<img src="images/img_txt2_km_mo.gif" alt="" />
+					<div class="clickGraph">
+						<span class="graph">
+							<span style="width:40%;">3% 추가 할인</span> <!-- 클릭시 할인율 상승 퍼센트로 조절 3% 이하 일시 텍스트 나오지 않음-->
+						</span>
+						<img src="images/bg_graph_km_mo.gif" alt="" class="bg" />
+						<button type="button"><img src="images/btn_click_km_mo.gif" alt="간절한 마음을 담아 CLICK!" /></button>
+					</div>
+					<div class="btnWrap">
+						<button type="button" class="btnType1">40개 남음</button>
+						<button type="button" class="btnType2">구매하기</button>
+					</div>
+				</div>
+			</div>
+
 		</div>
 	</div>
+	<img src="images/img2_km_mo.jpg" alt="" />
 	<img src="images/img3_km_mo.jpg" alt="" />
 </div>
-
 <script type="text/javascript">
 $(function(){
 	$('img[usemap]').rwdImageMaps();
