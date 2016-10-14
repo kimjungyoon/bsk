@@ -69,7 +69,7 @@ header .current > a {background:red;}
 	<div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
 </div>
 
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
 <script type="text/javascript">
 function menu() {
 	var menuWrap = $('header')
@@ -106,7 +106,7 @@ function menu() {
 	}
 	function pageLoad(page,tit,snbTit,list) {
 		$.ajax({
-			url : 'https://bsk824.github.io/shin_test/sample/'+page+'.html',
+			url : page+'.html',
 			dataType: 'html',
 			beforeSend : function() {
 				loadingOn();
@@ -130,8 +130,8 @@ function menu() {
 	}
 
 	window.onhashchange = function(e){
-		var href = e.newURL;
-		page = href.split('#')[1];
+		var href = window.location.href;
+		page = href.split('#')[1];)
 		m2dep.each(function(){
 			var $this = $(this);
 			if ($this.text() === page) { 
