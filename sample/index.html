@@ -9,10 +9,13 @@
 header {text-align:center;}
 header li {display:inline-block;}
 header .current > a {background:red;}
+
 #container:after {content:"";display:block;clear:both;}
 #snb {width:200px;float:left;}
+#contents {float:left;}
 .loading {position:fixed;top:0;bottom:0;right:0;}
 .loading div {position:relative;right:-100%;height:5%;background:#000;}
+.startLoading {left:0;}
 </style>
 </head>
 
@@ -54,7 +57,7 @@ header .current > a {background:red;}
 			<ul class="snbMenu">
 			</ul>
 		</nav>
-		<section id="contents" style="height:600px;">
+		<section id="contents">
 		</section>
 	</section>
 	<footer>
@@ -68,24 +71,25 @@ header .current > a {background:red;}
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script type="text/javascript">
-function menu(d1,d2) {
+function menu() {
 	var menuWrap = $('header')
 		,m2dep = menuWrap.find('.m2Dep > li > a')
 		,loadingLeng = $('.loading > div').length
 		,actionTime = 200
 		,actionInterval = 100
+		,loadTime = loadingLeng * actionInterval
 		,page,tit,snbTit,list;
 
 	function loadingOn() {
 		var deco = 0;
-		$('.loading').css('left','0');
+		$('.loading div').css({'right':'','left':''});
+		$('.loading').addClass('startLoading');
 		var loadTime = setInterval(function(){
 			if (deco != loadingLeng) {
 				$('.loading div').eq(deco).animate({'right':'0'},actionTime);
 				++deco;
 			} else {
 				clearInterval(loadTime);
-				$('.loading div').css('right','auto');
 			}
 		},actionInterval);
 	}
@@ -95,6 +99,10 @@ function menu(d1,d2) {
 			$('.loading div').eq(deco).animate({'left':'-100%'},actionTime);
 			++deco;
 		},actionInterval);
+		setTimeout(function(){
+			$('.loading').removeClass('startLoading');
+			$('.loading div').css({'right':'','left':''});
+		},loadTime);
 	}
 	function pageLoad(page,tit,snbTit,list) {
 		$.ajax({
@@ -104,14 +112,19 @@ function menu(d1,d2) {
 				loadingOn();
 			},
 			success : function(data){
-				$('#contents').html(data);
-				$('.snbTit').text(snbTit);
-				$('.pageTit').text(tit);
-				$('.snbMenu').children().remove();
-				$('.snbMenu').append(list);
+				setTimeout(function(){
+					$('#contents').html(data);
+					$('.snbTit').text(snbTit);
+					$('.pageTit').text(tit);
+					$('.snbMenu').children().remove();
+					$('.snbMenu').append(list);
+				},loadTime);
+				
 			},
 			complete : function() {
-				//loadingCom();
+				setTimeout(function(){
+					loadingCom();
+				},loadTime);
 			}
 		});
 	}
