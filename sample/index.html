@@ -80,6 +80,32 @@ function menu() {
 		,loadTime = loadingLeng * actionInterval
 		,page,tit,snbTit,list;
 
+	if (window.location.href.indexOf('#') > -1) { 
+		var href = window.location.href;
+		page = href.split('#')[1];
+		m2dep.each(function(){
+			var $this = $(this);
+			if ($this.text() === page) { 
+				snbTit = $this.parent().parent().prev().text();
+				tit = $this.text();
+				list = $this.parent().parent().html();
+				m2dep.parent().removeClass('current');
+				$this.parent().addClass('current');
+			}
+		});
+		$.ajax({
+			url : page+'.html',
+			dataType: 'html',
+			success : function(data){
+				$('#contents').html(data);
+				$('.snbTit').text(snbTit);
+				$('.pageTit').text(tit);
+				$('.snbMenu').children().remove();
+				$('.snbMenu').append(list);
+			}
+		});
+	}
+
 	function loadingOn() {
 		var deco = 0;
 		$('.loading div').css({'right':'','left':''});
