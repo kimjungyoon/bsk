@@ -1,2 +1,53 @@
 <h1 class="pageTit"></h1>
 
+<style type="text/css">
+.mainSmallBanner {position:relative;float:right;width:271px;height:270px;}
+.mainSmallBanner .control {position:absolute;top:21px;right:21px;}
+.mainSmallBanner .control button {overflow:hidden;text-indent:-9999px;}
+.mainSmallBanner .slidePager {margin:0 2px 0 0;}
+.mainSmallBanner .slidePager button {width:10px;height:10px;background:url(http://www.bonbridgeos.com/jamsil/images/main/btn_smallbanner_pager.png) no-repeat;}
+.mainSmallBanner .slidePager .active {width:19px;background:url(http://www.bonbridgeos.com/jamsil/images/main/btn_smallbanner_pager_active.png) no-repeat;}
+.mainSmallBanner .slideStop {width:8px;height:10px;background:url(http://www.bonbridgeos.com/jamsil/images/main/btn_smallbanner_stop.png) no-repeat;}
+.mainSmallBanner .slideStart {display:none;width:8px;height:10px;background:url(http://www.bonbridgeos.com/jamsil/images/main/btn_smallbanner_start.png) no-repeat;}
+</style>
+<section class="mainSmallBanner">
+	<ul>
+		<li><a href="/jamsil/specialize/specialize_01.html"><img src="http://www.bonbridgeos.com/jamsil/images/main/spe01.jpg" alt="관절 내시경 클리닉 여러가지 통증 질환, 진단과 수술을 동시에!" /></a></li>
+		<li><a href="/jamsil/knee/knee_06.html"><img src="http://www.bonbridgeos.com/jamsil/images/main/spe02.jpg" alt="퇴행성관절염, 류마티스 관절염, 심각한 무릅외상, 기형등을 치료" /></a></li>
+		<li><a href="/jamsil/knee/knee_04.html"><img src="http://www.bonbridgeos.com/jamsil/images/main/spe03.jpg" alt="줄기세포 치료, 간단한 시술방법으로 손상된 연골을 재생, 회복" /></a></li>
+	</ul>
+	<p class="control">
+		<span class="slidePager">
+			<button type="button" data-slide-index="0">1</button>
+			<button type="button" data-slide-index="1">2</button>
+			<button type="button" data-slide-index="2">3</button>
+		</span>
+		<button type="button" class="slideStop">자동 슬라이드 멈춤</button>
+		<button type="button" class="slideStart">자동 슬라이드 시작</button>
+	</p>
+</section>
+
+<script type="text/javascript">
+$(function(){
+	var mainSmallBanner = $('.mainSmallBanner ul').bxSlider({
+		speed : 500,
+		auto: true,
+		autoControls: false,
+		pagerCustom: '.mainSmallBanner .slidePager',
+		prevSelector : '.mainSmallBanner .slidePrev',
+		nextSelector : '.mainSmallBanner .slideNext',
+		prevText: '이전 슬라이드',
+		nextText: '다음 슬라이드'
+	});
+	$('.mainSmallBanner .slideStop').click(function(){
+		mainSmallBanner.stopAuto();
+		$(this).hide();
+		$('.mainSmallBanner .slideStart').show();
+	});
+	$('.mainSmallBanner .slideStart').click(function(){
+		mainSmallBanner.startAuto();
+		$(this).hide();
+		$('.mainSmallBanner .slideStop').show();
+	});
+});
+</script>
