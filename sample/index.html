@@ -83,16 +83,14 @@ function menu() {
 	if (window.location.href.indexOf('#') > -1) { 
 		var href = window.location.href;
 		page = href.split('#')[1];
-		m2dep.each(function(){
-			var $this = $(this);
-			if ($this.text() === page) { 
-				snbTit = $this.parent().parent().prev().text();
-				tit = $this.text();
-				list = $this.parent().parent().html();
-				m2dep.parent().removeClass('current');
-				$this.parent().addClass('current');
-			}
-		});
+
+		var $this = $('.m2Dep > li > [href="#' + page + '"]');
+		snbTit = $this.parent().parent().prev().text();
+		tit = $this.text();
+		list = $this.parent().parent().html();
+		m2dep.parent().removeClass('current');
+		$this.parent().addClass('current');
+
 		$.ajax({
 			url : page+'.html',
 			dataType: 'html',
@@ -135,22 +133,19 @@ function menu() {
 			url : page+'.html',
 			dataType: 'html',
 			beforeSend : function() {
-				loadingOn();
+				//loadingOn();
 			},
 			success : function(data){
-				setTimeout(function(){
-					$('#contents').html(data);
-					$('.snbTit').text(snbTit);
-					$('.pageTit').text(tit);
-					$('.snbMenu').children().remove();
-					$('.snbMenu').append(list);
-				},loadTime);
-				
+				$('#contents').html(data);
+				$('.snbTit').text(snbTit);
+				$('.pageTit').text(tit);
+				$('.snbMenu').children().remove();
+				$('.snbMenu').append(list);
 			},
 			complete : function() {
-				setTimeout(function(){
-					loadingCom();
-				},loadTime);
+				//setTimeout(function(){
+				//	loadingCom();
+				//},loadTime);
 			}
 		});
 	}
@@ -158,16 +153,12 @@ function menu() {
 	window.onhashchange = function(e){
 		var href = window.location.href;
 		page = href.split('#')[1];
-		m2dep.each(function(){
-			var $this = $(this);
-			if ($this.text() === page) { 
-				snbTit = $this.parent().parent().prev().text();
-				tit = $this.text();
-				list = $this.parent().parent().html();
-				m2dep.parent().removeClass('current');
-				$this.parent().addClass('current');
-			}
-		});
+		var $this = $('.m2Dep > li > [href="#' + page + '"]');
+		snbTit = $this.parent().parent().prev().text();
+		tit = $this.text();
+		list = $this.parent().parent().html();
+		m2dep.parent().removeClass('current');
+		$this.parent().addClass('current');
 		pageLoad(page,tit,snbTit,list);
 	}
 
