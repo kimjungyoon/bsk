@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>김 신 영 STUDIO</title>
+	<link href="css/reset.css" rel="stylesheet" type="text/css">
+	<link href="css/common.css" rel="stylesheet" type="text/css">
+	<link href="css/main.css" rel="stylesheet" type="text/css">
+
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="js/jquery.easing.1.3.min.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+	<script type="text/javascript">
+
+		  function initialize() {		
+			var mapLocation = new google.maps.LatLng('36.622213', '127.480936');
+			var markLocation = new google.maps.LatLng('36.622213', '127.480936');
+			var mapOptions = {
+				center: mapLocation,
+				zoom:15,
+				scrollwheel:false,
+				mapTypeId: google.maps.MapTypeId.ROADMAP
+			};
+			var map = new google.maps.Map(document.getElementById("map_canvas"),mapOptions);
+
+			var size_x = 36;
+			var size_y = 36;
+
+			var image = 'image/main/map_point.png';
+			
+			var marker;
+			marker = new google.maps.Marker({
+				position: markLocation,
+				map: map,
+				icon: image,
+				title:'ㅎㅇ'
+			});
+			var content = "kyoung-min Studio";
+			var infowindow = new google.maps.InfoWindow({content:content});
+			google.maps.event.addListener(marker, "click",function(){
+				infowindow.open(map,marker);
+			});
+		  }
+		google.maps.event.addDomListener(window, 'load', initialize);
+	</script>
+ </head>
+ <body class="test" >
+   <div id="wrap">
+		<div id="skip">
+			<a href="#content">본문 바로가기</a>
+		</div>
+		<header>
+			<div id="header_zone">
+				<div class="header_inner">
+					<h1 class="logo"><a href="main.html"><img src="image/about/logo.png" alt="" /><span>KYOUNGMIMCHOI</span></a></h1>
+					<div class="counseling">
+						<a href="#">상담 의뢰</a>
+					</div>
+					<div class="gnb_Open_btn">
+						<a href="#"><span>메뉴</span></a>
+					</div>
+				</div>
+			</div>
+		</header> 
+		<main>
+			<div id="content" class="content">
+				<!--  01 -->
+				<div class="main_bg">
+					<h1 class="tit">KYOUNGMIN<span>STUDIO</span></h1>
+					<p class="txt">Commercial photography</p>
+					<div class="btn_article"><a href="#move" class="click1">이동</a></div>
+				</div>
+
+				<!--  02 -->
+				<div id="move" class="about_zone">
+					<h2 class="sub_tit">ABOUT <span>STUDIO</span></h2>
+					<div class="txt_zone">
+						<ul class="txt_inner">
+							<li>
+								<p class="txt">Photography is not making beaut,<br /> beauty emerges from selection, <br  />affinities, integration, love</p>
+								<a href="#">KYOUNG MIN</a>
+							</li>
+							<li>
+								<p class="txt">Take a picture that, is reproducing the myth <br />of life. The everyday routine is and through <br />the picture.  Therefore, the author daily life <br />and in the middle of the picture.</p>
+							</li>
+							<li>
+								<p class="txt">There is a picture as a target. <br />The reason why pictures to turn more than <br />a painter, sculptor conversation piece than those that see in the skin of things there is looking at, <br />the picture.There things to see.</p>
+							</li>
+						</ul>
+						<div class="btn_article">
+						<a href="about.html">페이지 이동</a>
+					</div>
+					</div>
+				</div>
+				<!--  03 -->
+				<div class="portfolio_zone">
+					<h2 class="sub_tit">PORTFOLIO</h2>
+					<p class="txt"><a href="#"><span>더 많은 PORTFOLIO 보러 가기</span></a></p>
+					<div class="portfolio_inner">
+						<ul class="portfolio_info">
+							<li class="list_01">
+								<a href="">
+									<div class="img"><img src="image/main/portfolio_1.png" alt="" /></div>
+								</a>
+							</li>
+							<li class="list_02">
+								<a href="">
+									<div class="img"><img src="image/main/portfolio_2.png" alt="" /></div>
+								</a>
+							</li>
+							<li class="list_03">
+								<a href="">
+									<div class="img"><img src="image/main/portfolio_3.png" alt="" /></div>
+								</a>
+							</li>
+							<li class="list_04">
+								<a href="">
+									<div class="img"><img src="image/main/portfolio_4.png" alt="" /></div>
+								</a>
+							</li>
+							<li class="list_05">
+								<a href="">
+									<div class="img"><img src="image/main/portfolio_5.png" alt="" /></div>
+								</a>
+							</li>
+							<li class="list_06">
+								<a href="">
+									<div class="img"><img src="image/main/portfolio_6.png" alt="" /></div>
+								</a>
+							</li>
+							<li class="list_07">
+								<a href="">
+									<div class="img"><img src="image/main/portfolio_7.png" alt="" /></div>
+								</a>
+							</li>
+							<li class="list_08">
+								<a href="">
+									<div class="img"><img src="image/main/portfolio_8.png" alt="" /></div>
+								</a>
+							</li>
+							<li class="list_09">
+								<a href="">
+									<div class="img"><img src="image/main/portfolio_9.png" alt="" /></div>
+								</a>
+							</li>
+							<li class="list_10">
+								<a href="">
+									<div class="img"><img src="image/main/portfolio_10.png" alt="" /></div>
+								</a>
+							</li>
+							<li class="list_11">
+								<a href="">
+									<div class="img"><img src="image/main/portfolio_11.png" alt="" /></div>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!--  04 -->
+				<div class="counsel_zone">
+					<h2 class="sub_tit">상담이 필요하신가요?</h2>
+					<p class="txt">상담해 보세요. KyoungMin Studio와 함께</p>
+					<div class="btn_article">
+						<a href="">상담 신청하기 ></a>
+					</div>
+				</div>
+				<!--  05 -->
+				<div class="instagram_zone">
+					<h2 class="sub_tit">Instagram</h2>
+					<p class="txt">Kyoung-min Studio Life</p>
+					<div class="instagram_inner">
+						<ul class="instagram_info">
+							<li class="on">
+								<a href="#" class="size01">
+									<p class="img"></p>
+										<span class="img_none"><img src="image/main/instagram01.png" alt="" /></span>
+								</a>	
+								<div class="focus_on ">
+									<div class="text_zone">
+										<p class="tit"><span>S</span>tudio</p>
+										<p class="txt">Instagram</p>
+										<div class="btn_article">
+											<a href="#">more</a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="on">
+								<a href="#" class="size01">
+									<p class="img"></p>
+										<span class="img_none"><img src="image/main/instagram02.png" alt="" /></span>
+								</a>	
+								<div class="focus_on ">
+									<div class="text_zone">
+										<p class="tit"><span>S</span>tudio</p>
+										<p class="txt">Instagram</p>
+										<div class="btn_article">
+											<a href="#">more</a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="on">
+								<a href="#" class="size01">
+									<p class="img"></p>
+										<span class="img_none"><img src="image/main/instagram03.png" alt="" /></span>
+								</a>	
+								<div class="focus_on ">
+									<div class="text_zone">
+										<p class="tit"><span>S</span>tudio</p>
+										<p class="txt">Instagram</p>
+										<div class="btn_article">
+											<a href="#">more</a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="on">
+								<a href="#" class="size01">
+									<p class="img"></p>
+										<span class="img_none"><img src="image/main/instagram04.png" alt="" /></span>
+								</a>	
+								<div class="focus_on ">
+									<div class="text_zone">
+										<p class="tit"><span>S</span>tudio</p>
+										<p class="txt">Instagram</p>
+										<div class="btn_article">
+											<a href="#">more</a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="on">
+								<a href="#" class="size01">
+									<p class="img"></p>
+										<span class="img_none"><img src="image/main/instagram05.png" alt="" /></span>
+								</a>	
+								<div class="focus_on ">
+									<div class="text_zone">
+										<p class="tit"><span>S</span>tudio</p>
+										<p class="txt">Instagram</p>
+										<div class="btn_article">
+											<a href="#">more</a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="on">
+								<a href="#" class="size01">
+									<p class="img"></p>
+										<span class="img_none"><img src="image/main/instagram06.png" alt="" /></span>
+								</a>	
+								<div class="focus_on ">
+									<div class="text_zone">
+										<p class="tit"><span>S</span>tudio</p>
+										<p class="txt">Instagram</p>
+										<div class="btn_article">
+											<a href="#">more</a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="on">
+								<a href="#" class="size01">
+									<p class="img"></p>
+										<span class="img_none"><img src="image/main/instagram07.png" alt="" /></span>
+								</a>	
+								<div class="focus_on ">
+									<div class="text_zone">
+										<p class="tit"><span>S</span>tudio</p>
+										<p class="txt">Instagram</p>
+										<div class="btn_article">
+											<a href="#">more</a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="on">
+								<a href="#" class="size01">
+									<p class="img"></p>
+										<span class="img_none"><img src="image/main/instagram08.png" alt="" /></span>
+								</a>	
+								<div class="focus_on ">
+									<div class="text_zone">
+										<p class="tit"><span>S</span>tudio</p>
+										<p class="txt">Instagram</p>
+										<div class="btn_article">
+											<a href="#">more</a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="on">
+								<a href="#" class="size01">
+									<p class="img"></p>
+										<span class="img_none"><img src="image/main/instagram09.png" alt="" /></span>
+								</a>	
+								<div class="focus_on ">
+									<div class="text_zone">
+										<p class="tit"><span>S</span>tudio</p>
+										<p class="txt">Instagram</p>
+										<div class="btn_article">
+											<a href="#">more</a>
+										</div>
+									</div>
+								</div>
+							</li>
+
+						</ul>
+					</div>
+				</div>
+				<!--  06 -->
+				<div class="news_zone">
+					<h2 class="sub_tit">News &amp; Event</h2>
+					<p class="txt">kyoung-min Studio Event</p>
+					<div class="news_inner">
+						<ul class="news_info">
+							<li>
+								<a href="">
+									<span class="img"><img src="image/main/news01.png" alt="" /></span>
+									<div class="info">
+										<p class="tit">Studio<span>News</span></p>
+										<div class="box">
+											<p class="sub_txt01">30% OFF</p>
+											<p class="sub_txt02">DO NOT MISS OUT</p>
+										</div>	
+										<p class="txt">There is a picture as a target. </p>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<span class="img"><img src="image/main/event01.png" alt="" /></span>
+									<div class="info">
+										<p class="tit">Studio<span>Event</span></p>
+										<div class="box">
+											<p class="sub_txt01">30% OFF</p>
+											<p class="sub_txt02">DO NOT MISS OUT</p>
+										</div>	
+										<p class="txt">Photography is not making beaut,</p>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<span class="img"><img src="image/main/news01.png" alt="" /></span>
+									<div class="info">
+										<p class="tit">Studio<span>News</span></p>
+										<div class="box">
+											<p class="sub_txt01">30% OFF</p>
+											<p class="sub_txt02">DO NOT MISS OUT</p>
+										</div>	
+										<p class="txt">There things to see.</p>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<span class="img"><img src="image/main/event01.png" alt="" /></span>
+									<div class="info">
+										<p class="tit">Studio<span>Event</span></p>
+										<div class="box">
+											<p class="sub_txt01">30% OFF</p>
+											<p class="sub_txt02">DO NOT MISS OUT</p>
+										</div>	
+										<p class="txt">Event 2016 - 11 - 02</p>
+									</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!--  07 -->
+				<div class="map_zone">
+					<div class="map">
+						<div id="map_canvas"></div>
+					</div>
+					<div class="addr_zone">
+						<ul class="addr_inner">
+							<li>
+								<div class="info call">
+									<p class="txt">CALL US<br /><span>+82 10.3084.4055</span></p>
+								</div>
+							</li>
+							<li>
+								<div class="info mail">
+									<p class="txt">ADDRESS<br /><span>충청북도 청주시 서원구 무심동로 610</span></p>
+								</div>
+							</li>
+							<li>
+								<div class="info point">
+									<p class="txt">E-MAIL<br /><span>rudalsu@naver.com</span></p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer>
+			<div id="footer_zone">
+				<p class="txt01">KYOUNG MIN CHOI 2 0 1 6</p>
+				<p class="txt02">Made with love for great people.</p>
+			</div>	
+		</footer>
+   </div>
+	
+	<div class="gnb">
+		<ul class="gnb_list">
+			<li><a href="main.html">HOME</a></li>
+			<li><a href="about.html">About Studio</a></li>
+			<li><a href="portfolio.html">Portfolio</a></li>
+			<li><a href="news_event">News & Event</a></li>
+		</ul>
+		<div class="gnb_counseling">
+			<a href="#">상담신청</a>
+		</div>
+		<ul class="studio_info">
+			<li class="tel">+82 10.3084.4055</li>
+			<li class="addr">충청북도 청주시 서원구<br /> 무심동로 610</li>
+			<li class="email">rudalsu@naver.com</li>
+		</ul>
+		<p class="copyright">
+			2016 &copy; 최경민 <br /> KYOUNGMIN <span class="bold">STUDIO</span>
+		</p>
+		<div class="cancel">
+			<a href="">닫기</a>
+		</div>
+	</div>
+
+	<div class="counseling_pop_zone">13123132123</div>
+					<div class="counseling_pop">
+						<div class="studio_name">
+							<p class="name_txt">
+								<span class="txt">K</span>
+								<span class="txt">Y</span>
+								<span class="txt">O</span>
+								<span class="txt">U</span>
+								<span class="txt">N</span>
+								<span class="txt">G</span>
+								<span >&nbsp;</span>
+								<span class="txt">M</span>
+								<span class="txt">I</span>
+								<span class="txt">N</span>
+							</p>
+						</div>
+						<!-- 정보  -->
+						<div class="pop_content">
+							<p class="main_tit">상담의뢰</p>
+							<p class="main_txt01">항상 고객과 함께 합니다.</p>
+							<p class="main_txt02">고객님의 소중한 추억을 담아드리겠습니다.<br />아래 양식을 작성해주시면 빠르게 연락드리겠습니다.</p>
+							<div class="pop_form">
+								<form action="" method="" >
+									<p class="tit"><span class="star">필수입력</span></p>
+									<div class="surely_zone">
+										<div class="name_zone">
+											<label for="name">이름</label>
+											<p class="txt"><span class="star">이름</span></p>
+											<input type="text" id="name"name="name"/>
+										</div>
+										<div class="tel_zone">
+											<label for="tel">연락처</label>
+											<p class="txt"><span class="star">연락처</span></p>
+											<input type="text" id="tel" name="tel"/>
+										</div>
+										<div class="email_zone">
+											<label for="email">이메일</label>
+											<p class="txt"><span class="star">이메일</span></p>
+											<input type="text" id="email"  name="email"/>
+										</div>
+									</div>
+									<p class="tit type02">어떤 서비스를 원하십니까? <span>( 다중선택 )</span></p>
+									<div class="select_zone">
+										<ul class="select_inner">
+											<li>
+												<label for="profile">프로필</label>
+												<input type="checkbox" id="profile" value="프로필"  name="service" /><span class="title">프로필</span>
+											</li>
+											<li>
+												<label for="wedding">웨딩</label>
+												<input type="checkbox" id="wedding" value="웨딩" name="service"  /><span class="title">웨딩</span>
+											</li>
+											<li>
+												<label for="picture">증명사진</label>
+												<input type="checkbox" id="picture" value="증명사진"  name="service"  /><span class="title">증명사진</span>
+											</li>
+											<li>
+												<label for="etc">기타</label>
+												<input type="checkbox" id="etc" value="기타 등.." name="service"  checked /><span class="title">기타</span>
+											</li>
+											<li class="etc_text_zone">
+												<textarea name="etc_text" id="etc_text" style="resize:none"></textarea>
+											</li>
+										</ul>
+									</div>
+									
+									<div class="agreement_zone">
+										<p class="tit star">
+											<a href="" class="check01"><span class="checkbox_style"></a></span>
+											<input type="checkbox" id="check01" /> <!-- 이녀석도 체크가능하게 하였음  위에 a태그 클릭하면 -->
+											<a href="#" class="check02">개인정보보호정책</a>에 동의합니다.
+										</p>
+										<p class="txt">고객님의 추억을 Kyoung Min Studio로 고려해주셔서 다시 한번 감사드립니다.<br />양식을 작성해주신 날부터 2일 이내에 연락드리겠습니다.</p>
+									</div>
+									<div class="btn_article">
+										<a href=""><span>상담신청</span></a>
+									</div>
+								</form>
+							</div>
+							
+						</div>
+
+						<div class="cancel">
+							<a href="">닫기</a>
+						</div>
+					</div>
+ </body>
+</html>
