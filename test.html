@@ -4,42 +4,114 @@
 <title></title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<link rel="stylesheet" type="text/css" href="">
+<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+<style type="text/css">
+* {padding:0;margin:0;}
+#header {height:12.8vw;border:1px solid black;text-align:center;}
+#container {position:relative;}
+.evtWrap {position:fixed;top:0;right:0;bottom:0;left:0;overflow:hidden;background:yellow;z-index:9;}
+.endGame {position:relative;height:100vw;}
+.evtWrap .btnStart {position:fixed;top:50%;left:50%;font-size:20vw;transform:translate(-50%,-50%);z-index:2;}
+.start .bg {position:absolute;top:0;right:0;bottom:0;left:0;}
+.evtWrap .countDown {display:none;position:fixed;top:50%;right:0;left:0;text-align:center;font-size:50vw;transform:translate(0,-50%);}
+.clickCount {padding:10vw 0 100vw;text-align:center;}
+.clickCount .count {color:red;}
+.itemLink a {position:absolute;width:10vw;height:10vw;bottom:-10%;left:0;border-radius:50%;background:blue;transition:bottom 20s,left 20s;}
+.itemLink a.on {background:red;}
+.itemLink a:nth-of-type(2) {left:10%;}
+.itemLink a:nth-of-type(3) {left:20%;}
+.itemLink a:nth-of-type(4) {left:30%;}
+.itemLink a:nth-of-type(5) {left:40%;}
+.itemLink a:nth-of-type(6) {left:50%;}
+.itemLink a:nth-of-type(7) {left:60%;}
+.itemLink a:nth-of-type(8) {left:70%;}
+.itemLink a:nth-of-type(9) {left:80%;}
+.itemLink a:nth-of-type(10) {left:90%;}
+.start a {bottom:150%;}
+.start a.item1 {left:10%;}
+.start a.item2 {left:20%;}
+.start a.item3 {left:30%;}
+.start a.item4 {left:40%;}
+.start a.item5 {left:50%;}
+.start a.item6 {left:60%;}
+.start a.item7 {left:70%;}
+.start a.item8 {left:80%;}
+.start a.item9 {left:90%;}
+.start a.item10 {left:100%;}
+#footer {height:12.8vw;border:1px solid black;text-align:center;}
+</style>
 </head>
-
 <body>
+
+<div id="header">
+header
+</div>
+<div id="container">
+	<div class="evtWrap">
+		<button type="button" onclick="gameStart();" class="btnStart">start</button>
+		<div class="bg"></div>
+		<p class="itemLink">
+			<a href="#"></a>
+			<a href="#"></a>
+			<a href="#"></a>
+			<a href="#"></a>
+			<a href="#"></a>
+			<a href="#"></a>
+			<a href="#"></a>
+			<a href="#"></a>
+			<a href="#"></a>
+			<a href="#"></a>
+		</p>
+		<p class="countDown">5</p>
+	</div>
+	<p class="clickCount">터치 성공 <strong class="count">0</strong>회</p>
+</div>
+<div id="footer">
+footer
+</div>
 <script type="text/javascript">
-function setCookie(cname, cvalue, exdays) {
-	var d = new Date();
-	d.setTime(d.getTime() + (exdays*24*60*60*1000));
-	var expires = "expires="+d.toUTCString();
-	document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
-function getCookie(cname) {
-	var name = cname + "=";
-	var ca = document.cookie.split(';');
-	for(var i = 0; i < ca.length; i++) {
-		var c = ca[i];
-		while (c.charAt(0) == ' ') {
-			c = c.substring(1);
+function gameStart() {
+	var countDown = $('.countDown')
+		,count = 0;
+	$('.btnStart').hide();
+	countDown.show();
+	var countDownN = countDown.text();
+	var countTime = setInterval(function(){
+		--countDownN;
+		if (countDownN === -1) {
+			game();
+		} else {
+			countDown.text(countDownN);
 		}
-		if (c.indexOf(name) == 0) {
-			return c.substring(name.length, c.length);
+	},1000);
+	function randomRange(n1,n2) {
+		return Math.floor((Math.random() * (n2-n1+1)) + n1);
+	}
+	function game() {
+		$('.evtWrap').addClass('start');
+		$('.itemLink a').each(function() {
+			var randomN = randomRange(1,10);
+			$(this).addClass('item'+ randomN);
+		});
+		clearInterval(countTime);
+		countDown.hide();
+		setTimeout(function(){
+			$('.evtWrap').removeClass('start').addClass('endGame');
+			$('.itemLink').hide();
+			$('html,body').animate({scrollTop:$('.clickCount').offset().top},300);
+		},9000);
+	}
+	$('.itemLink a').click(function(){
+		var _this = $(this);
+		if (!_this.hasClass('on')) {
+			$(this).addClass('on');
+			++count;
+			$('.count').text(count);
 		}
-	}
-	return "";
-}
-function checkCookie() {
-	var user=getCookie("username");
-	if (user != "") {
-		alert("Welcome again " + user);
-	} else {
-	   user = prompt("Please enter your name:","");
-	   if (user != "" && user != null) {
-		   setCookie("username", user, 30);
-	   }
-	}
+		return false;
+	})
 }
 </script>
 </body>
 </html>
+
