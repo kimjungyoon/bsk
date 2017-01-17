@@ -16,18 +16,18 @@
 .evtWrap .countDown {display:none;position:fixed;top:50%;right:0;left:0;text-align:center;font-size:50vw;transform:translate(0,-50%);}
 .clickCount {padding:10vw 0 100vw;text-align:center;font-size:10vw;}
 .clickCount .count {color:red;}
-.itemLink a {position:absolute;width:15vw;height:15vw;bottom:-15%;left:0;border-radius:50%;background:blue;transition:bottom 20s,left 20s;}
-.itemLink a.on {background:red;z-index:-1;}
-.itemLink a:nth-of-type(2) {left:25%;}
-.itemLink a:nth-of-type(3) {left:50%;}
-.itemLink a:nth-of-type(4) {left:75%;}
-.itemLink a:nth-of-type(5) {left:100%;}
-.start a {bottom:150%;}
-.start a.item1 {left:0;}
-.start a.item2 {left:25%;}
-.start a.item3 {left:50%;}
-.start a.item4 {left:75%;}
-.start a.item5 {left:100%;}
+.itemLink button {position:absolute;width:15vw;height:15vw;bottom:-15%;left:0;border-radius:50%;background:blue;transition:bottom 20s,left 20s;border:0;}
+.itemLink button.on {background:red;z-index:-1;}
+.itemLink button:nth-of-type(2) {left:25%;}
+.itemLink button:nth-of-type(3) {left:50%;}
+.itemLink button:nth-of-type(4) {left:75%;}
+.itemLink button:nth-of-type(5) {left:80%;}
+.start button {bottom:150%;}
+.start button.item1 {left:0;}
+.start button.item2 {left:25%;}
+.start button.item3 {left:50%;}
+.start button.item4 {left:75%;}
+.start button.item5 {left:80%;}
 #footer {height:12.8vw;border:1px solid black;text-align:center;}
 </style>
 </head>
@@ -41,11 +41,11 @@ header
 		<button type="button" onclick="gameStart();" class="btnStart">start</button>
 		<div class="bg"></div>
 		<p class="itemLink">
-			<a href="#"></a>
-			<a href="#"></a>
-			<a href="#"></a>
-			<a href="#"></a>
-			<a href="#"></a>
+			<button type="button"></button>
+			<button type="button"></button>
+			<button type="button"></button>
+			<button type="button"></button>
+			<button type="button"></button>
 		</p>
 		<p class="countDown">5</p>
 	</div>
@@ -57,6 +57,7 @@ footer
 <script type="text/javascript">
 function gameStart() {
 	var countDown = $('.countDown')
+		,item = $('.itemLink button')
 		,count = 0;
 
 	$('.btnStart').hide();
@@ -80,7 +81,7 @@ function gameStart() {
 
 	function game() {
 		$('.evtWrap').addClass('start');
-		$('.itemLink a').each(function() {
+		item.each(function() {
 			var randomN = randomRange(1,5);
 			$(this).addClass('item'+ randomN);
 		});
@@ -88,19 +89,18 @@ function gameStart() {
 		countDown.hide();
 		setTimeout(function(){
 			$('.evtWrap').removeClass('start').addClass('endGame');
-			$('.itemLink').hide();
+			item.hide();
 			$('html,body').animate({scrollTop:$('.clickCount').offset().top},300);
 		},9000);
 	}
 
-	$('.itemLink a').click(function(){
+	item.bind('touchstart', function(){
 		var _this = $(this);
 		if (!_this.hasClass('on')) {
 			$(this).addClass('on');
 			++count;
 			$('.count').text(count);
 		}
-		return false;
 	});
 }
 </script>
