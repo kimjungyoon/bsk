@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title></title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+<style type="text/css">
+body {text-align:center;}
+button {font-size:20px;}
+p {font-size:20px;}
+p span {display:inline-block;width:30px;line-height:30px;border-radius:50%;border:1px solid black;}
+p strong {display:block;margin:15px 0 0;}
+</style>
+</head>
+<body>
+<script type="text/javascript">
+var num = 0
+	,test = new Array
+	,test = [];
+function randomRange(n1,n2) {
+	return Math.floor((Math.random() * (n2-n1+1)) + n1);
+}
+function random() {
+	num = randomRange(1,45);
+	if (test.indexOf(num) < 0){
+		test.push(num);
+	} else {
+		random();
+	}
+}
+function lotto() {
+	for ( i = 1 ; i <= 7 ; i++ ) {
+		random();
+	}
+	$('p').html(
+	"<span>"+test[0]+"</span> <span>"+test[1]+"</span> <span>"+test[2]+"</span> <span>"+test[3]+"</span> <span>"+test[4]+"</span> <span>"+test[5]+"</span> + <span>"+test[6]+"</span> <strong>당첨 되거든 미니쿠퍼 한대 부탁~</strong>");
+
+	test = [];
+}
+</script>
+<button type="button" onclick="lotto();">GOGO!</button>
+<p></p>
+</body>
+</html>
+
